@@ -14,6 +14,8 @@ class Producto(Base):
  nombre = Column(String)
  precio = Column(Float)
 
+#preguntar a sofi por que creo la clase ventas
+
 # Crear las tablas en el archivo si no existen
 Base.metadata.create_all(engine)
 
