@@ -1,9 +1,12 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 from sqlalchemy import create_engine, Column, Integer, String
 from sqlalchemy.orm import declarative_base, sessionmaker
 
 engine = create_engine('sqlite:///mi_base.db', echo=True)
 =======
+=======
+>>>>>>> Lucia-abmProducto
 from fastapi import FastAPI, HTTPException, status
 from database import Producto
 
@@ -62,5 +65,9 @@ def eliminar_producto(id, database):
  if producto is None:
     raise HTTPException(status_code=404, detail="Producto no encontrado")
  database.delete(producto)
+<<<<<<< HEAD
+ database.commit()
+>>>>>>> Lucia-abmProducto
+=======
  database.commit()
 >>>>>>> Lucia-abmProducto
