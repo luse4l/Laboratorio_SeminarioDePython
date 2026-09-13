@@ -30,4 +30,8 @@ session = Session()
 
 #Consultar productos
 #for producto in session.query(Producto).all():
+<<<<<<< HEAD
     #print(producto.nombre, producto.precio)
+=======
+    #print(producto.nombre, producto.precio)
+>>>>>>> Lucia-abmProducto
