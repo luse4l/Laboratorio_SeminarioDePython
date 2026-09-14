@@ -6,10 +6,8 @@ app = FastAPI()
 # Obtener todos los productos
 @app.get("/productos")
 def listar_productos(database):
- productos = Producto.query.all()
- return [vars(p) for p in productos]
-
-#producto = session.query(Producto).all()  ?????????????????????????????????????'
+producto = session.query(Producto).all()
+return [vars(p) for p in productos]
 
 # Obtener un producto por ID
 @app.get("/producto/{id}")
@@ -56,9 +54,3 @@ def eliminar_producto(id, database):
  if producto is None:
     raise HTTPException(status_code=404, detail="Producto no encontrado")
  database.delete(producto)
-<<<<<<< HEAD
- database.commit()
->>>>>>> Lucia-abmProducto
-=======
- database.commit()
->>>>>>> Lucia-abmProducto
