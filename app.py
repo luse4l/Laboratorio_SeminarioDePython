@@ -1,5 +1,6 @@
-from fastapi import FastAPI, HTTPException, status
-from database import Producto
+from fastapi import FastAPI, HTTPException, status, Depends
+from sqlalchemy.orm import Session
+from database import Producto, SessionLocal
 
 app = FastAPI()
 
