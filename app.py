@@ -1,13 +1,28 @@
 from fastapi import FastAPI, HTTPException, status
 from database import Producto
 
+#instancio fastapi
 app = FastAPI()
+
+@app.get("/") #es el home
+async def root():
+    return {"message": "Hello World"}
 
 # Obtener todos los productos
 @app.get("/productos")
 def listar_productos(database):
 producto = session.query(Producto).all()
 return [vars(p) for p in productos]
+
+@app.get("/products", status_code=status.HTTP_200_OK)
+async def get_product():
+    try:
+        products = Products.query.all()
+        response = {"products": products}
+        return response
+    except Exception as e: #si hay exception guardala en e
+        raise HTTPException(status_code=status.HTTP_500_INTERNAL_SERVER_ERROR, detail=f"An error occurred while trying to get products: {e}")
+
 
 # Obtener un producto por ID
 @app.get("/producto/{id}")
